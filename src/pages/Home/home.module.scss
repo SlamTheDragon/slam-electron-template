@@ -5,4 +5,8 @@
 	@include wight(100vw, 100vh);
 
 	flex-direction: column;
+
+	svg {
+		@include wight(150px, 150px);
+	}
 }

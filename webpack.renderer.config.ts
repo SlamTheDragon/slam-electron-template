@@ -18,13 +18,17 @@ rules.push(
     use: ["style-loader", "css-loader", "sass-loader",],
   },
   {
-    test: /\.(png|jpg)$/,
+    test: /\.svg$/,
+    use: [{loader: '@svgr/webpack'}, {loader: 'url-loader'}],
+  },
+  {
+    test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: 'assets/',
+          limit: 8192, // If the file size is less than 8KB, convert it to a data URL
+          fallback: 'file-loader', // Otherwise, use the file-loader
         },
       },
     ],
@@ -37,6 +41,6 @@ export const rendererConfig: Configuration = {
   },
   plugins,
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.scss', '.png', '.jpg'], // Add .scss extension
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.scss', '.svg', '.png', '.jpg', '.gif', '.jpeg']
   },
 };

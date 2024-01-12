@@ -138,6 +138,41 @@ $grid-a-gap: 16px;
 	border-radius: $global-border-radius;
 }
 
+@mixin button {
+	@include shadow;
+    @include wight(unset, 38px);
+    @include mar-pad(unset, 0 15px);
+    @include focus-style;
+    @include flex-center();
+    @include transition-anim;
+
+    // extract or create a new default color for buttons
+    border: none;
+    border-radius: $global-border-radius;
+    color: $color-prm;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(95%);
+    }
+
+    &:active {
+        filter: brightness(110%);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: $disabled;
+        color: $tone2;
+
+        svg {
+            fill: $tone2;
+        }
+    }
+}
+
 // # [ALIGNMENT MIXINS]
 
 @mixin ext-container {
@@ -354,6 +389,19 @@ $grid-a-gap: 16px;
 
 // --[ BUTTON ]--
 
+.btn {
+	background-color: $default;
+}
+
+// --[ CARD ]--
+
+.card {
+	@include card();
+}
+
+
+// --[ ACCENTS ]--
+
 .primary {
 	background-color: $primary;
 }
@@ -376,13 +424,6 @@ $grid-a-gap: 16px;
 
 .danger {
 	background-color: $danger;
-}
-
-
-// --[ CARD ]--
-
-.card {
-	@include card();
 }
 
 // # [ROOT]

@@ -3,3 +3,5 @@ declare global {
         electron: typeof Electron
     }
 }
+
+export { }

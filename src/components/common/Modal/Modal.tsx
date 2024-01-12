@@ -11,16 +11,16 @@
 */
 
 import React from 'react';
-import Button from '../Button/Button'
 import style from './modal.module.scss'
+import Button, { BtnAccent } from '../Button/Button'
 
 interface ModalProps {
-    modalTitle: string
-    isOpen: boolean
-    children?: React.ReactNode
-    selectInterface: number
-    selectAction?: number
-    onClose: () => void
+    readonly modalTitle: string
+    readonly isOpen: boolean
+    readonly children?: React.ReactNode
+    readonly selectInterface: number
+    readonly selectAction?: number
+    readonly onClose: () => void
 }
 
 /**
@@ -56,7 +56,7 @@ export default function Modal(props: ModalProps) {
                     {selectedChild}
                 </div>
                 <div className={style.modalAction}>
-                    <Button classItem='primary'>Hello World</Button>
+                    <Button appearance={BtnAccent.primary}>Hello World</Button>
                 </div>
             </div>
 
