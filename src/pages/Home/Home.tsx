@@ -48,13 +48,14 @@ export default function Home() {
                 <Button onClick={() => {IPCSend.window.toTray()}}>To Tray</Button>
             </div>
 
+            {/* TODO: implement BtnType: see Button.tsx */}
+            {/* <Button>Sample</Button>
             <Button>Sample</Button>
             <Button>Sample</Button>
             <Button>Sample</Button>
             <Button>Sample</Button>
             <Button>Sample</Button>
-            <Button>Sample</Button>
-            <Button>Sample</Button>
+            <Button>Sample</Button> */}
 
 
             <div style={{ opacity: 0.7, padding: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 5 }}>

@@ -132,6 +132,7 @@ interface ButtonInterface {
  * 
  * @component
  * @param {string} [props.appearance] - Additional classes: [ primary | secondary | success | info | warn | danger ] to be applied to the button.
+ * @param {string} [props.type] - TODO: update this line
  * @param {boolean} [props.disabled] - Whether the button should be disabled.
  * @param {number} [props.tabIndex] - The tab order of the button within the page.
  * @param {function} [props.onClick] - The function to be called when the button is clicked.
